@@ -24,4 +24,4 @@ while 1:
         break
 
 
-cv.destroy  AllWindows()
+cv.destroyAllWindows()
