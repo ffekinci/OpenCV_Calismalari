@@ -1,0 +1,25 @@
+import cv2 as cv
+import numpy as np
+
+img = np.zeros((512, 512, 3), np.uint8)
+
+cv.line(img, (0, 0), (512, 512), (255, 0, 0), 10)
+
+
+
+cv.rectangle(img,(384,0),(510,128),(0,255,0),3)
+
+
+cv.circle(img,(447,63), 63, (0,0,255), -1)
+cv.ellipse(img,(256,256),(100,50),0,0,180,255,-1)
+
+pts = np.array([[10,5],[20,30],[70,20],[50,10]], np.int32)
+pts = pts.reshape((-1,1,2))
+cv.polylines(img,[pts],True,(0,255,255))
+
+font = cv.FONT_HERSHEY_SCRIPT_SIMPLEX
+cv.putText(img, "Deneme", (10,50), font, 2, (255, 255, 255), 2, cv.LINE_AA)
+
+cv.imshow("deneme", img)
+cv.waitKey(0)
+cv.destroyAllWindows()
